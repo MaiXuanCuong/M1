@@ -37,8 +37,9 @@
                 <input type="radio" name="gender"> Male<br>
                 <input type="radio" name="gender"> Female<br>
                 <input type="radio" name="gender"> Nonbinary<br>
-                <input type="radio" name="gender"> Other<br>
-                <input type="text" name="gender">
+                <input type="radio" name="gender" onclick="file();"> Other<br> 
+                <input onclick="file();" type="text" name="gender"><br>
+                <lable id="secon"></lable>
                 <h5>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h5>
                 <input type="checkbox">Product 1<br>
                 <input type="checkbox">Product 2<br>
@@ -73,7 +74,7 @@
             <th>Agree</th>
             <th>Strongly Agree</th>
         </tr>
-    <tr>
+    <tr id="k1" onclick="click1()";>
         <td>Our products are priced fairly.</td>
         <td><input type="radio" name="number"><br>1</td>
         <td><input type="radio" name="number"><br>2</td>
@@ -96,6 +97,14 @@
     </tr>
 </table><br>
     <input type="Submit" value="Submit">
-    
+    <script>
+        function file(){
+            var x ="Maximum of 250 characters.    Currently Used: 0 characters.";
+            document.getElementById("secon").innerHTML= x;
+        }
+        function click1(){
+            document.getElementById("k1").style.backgroundcolor='#fff7c0';
+        }
+    </script>
 </body>
 </html>

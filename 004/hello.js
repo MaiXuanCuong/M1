@@ -1,1 +1,1 @@
-alert ('chào mừng bạn đã đến với chúng tôi')
+alert ('chào mừng bạn đã đến với chúng')
