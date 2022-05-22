@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <form action="">
+            <input type="number" id="ok" value="" placeholder = "Nhập bán kính r"> 
+            <input type="submit" id="ok1" value="Chu vi hình tròn" onclick="k1()" >
+        </form>
+        <script>
+            function k1() {
+               let a = parseFloat(document.getElementById('ok').value); 
+               var ketqua = (a*2)*Math.PI;
+               alert (ketqua);
+            }
+        </script>
+</body>
+</html>
