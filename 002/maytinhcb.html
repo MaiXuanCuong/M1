@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="so" value="" width = "100%">
+    <tr>
+        <td><input type="button" value="9" id="so_9" onclick=" xu_ly_so_9() "></td>
+        <td><input type="button" value="8" id="so_8" onclick=" xu_ly_so_8() "></td>
+        <td><input type="button" value="7" id="so_7" onclick=" xu_ly_so_7() "></td>
+        <td> <input type="button" value="+" id="cong" onclick=" xu_ly_cong() "></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="6" id="so_6" onclick=" xu_ly_so_6() "></td>
+        <td><input type="button" value="5" id="so_5" onclick=" xu_ly_so_5() "></td>
+        <td><input type="button" value="4" id="so_4" onclick=" xu_ly_so_4() "></td>
+        <td><input type="button" value="-" id="tru" onclick=" xu_ly_tru() ">
+        </td>
+    </tr>
+    <tr></tr>
+​<input type="button" value="0" id="so_0" onclick=" xu_ly_so_0() ">
+
+
+
+
+
+   <input type="button" value="1" id="so_1" onclick=" xu_ly_so_1() ">
+   <input type="button" value="2" id="so_2" onclick=" xu_ly_so_2() ">
+   <input type="button" value="3" id="so_3" onclick=" xu_ly_so_3() ">
+
+  
+   <input type="button" value="=" id="bang" onclick=" xu_ly_bang() ">
+   <input type="button" value="*" id="nhan" onclick=" xu_ly_nhan() ">
+   <input type="button" value="/" id="chia" onclick=" xu_ly_chia() ">
+   
+   
+
+
+
+   <script>
+       function xu_ly_so_1(){
+            var so = document.getElementById('so').value;
+            so = so + 1;
+            //dua vao o input
+            document.getElementById('so').value = so;
+       }
+       function xu_ly_so_2(){
+            var so = document.getElementById('so').value;
+            so = so + 2;
+            //dua vao o input
+            document.getElementById('so').value = so;
+       }
+       function xu_ly_cong(){
+            var so = document.getElementById('so').value;
+            so = so + '+';
+            //dua vao o input
+            document.getElementById('so').value = so;
+       }
+       function xu_ly_bang(){
+            var so = document.getElementById('so').value;
+            var ketqua = eval( so ); // 1 + 2 => 3
+            //dua vao o input
+            document.getElementById('so').value = ketqua;
+       }
+​
+   </script>
+</body>
+</html>
+Collapse
