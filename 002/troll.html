@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #do {
+            position: absolute;
+            left: 285px;
+            top: 235px;
+        }
+        #do2 {
+            position: absolute;
+            left: 360px;
+            top: 235px;
+        }
+        label {
+            position:absolute;
+            left:285px;
+            top:210px
+        }
+    </style>
+</head>
+<body>
+    <form><b>Thoát ra là đồng ý nhé</b>
+        <label><b>Em làm ny anh nhé </b></label><br>
+        <input id="do" type="button" value="có" onclick="yes();">
+        <input id="do2" type="button" value="không"  onmouseover="no();">
+    </form>
+    <script>
+        function yes() {
+            alert("Anh cũng thế!")
+        }
+        function no() {
+        var x =  Math.round(Math.random() * window.innerWidth);
+        var y = Math.round(Math.random() * window.innerHeight);
+        document.getElementById('do2').style.left = x + 'px';
+        document.getElementById('do2').style.top = y + 'px';
+    }
+    </script>
+</body>
+</html>
