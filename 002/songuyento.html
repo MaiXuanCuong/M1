@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkNT(number) {
+            let count = 0;
+            let countSNT = 0;
+            for (let i = 2; i < 1000; i++) {
+                if (countSNT < number) { 
+                    for (let j = 1; j <= i; j++) {
+                        if (i % j == 0) {
+                            count += 1;
+                        }
+                    }
+                    if (count == 2) {
+                        document.write(i + "<br>");
+                        countSNT += 1;
+                    }
+                    count = 0;
+                } else {
+                    break;
+                }
+            }
+        }
+        let number = parseInt(prompt("Nhập n số nguyên tố đầu tiên: "));
+        checkNT(number);
+        
+        
+
+        //2 3 5 7 11
+        // let count = 0;
+        // for (i = 1; i <= 40; i++) {
+            // for (let i = 1; i <= number; i++) {
+            //     if (number % i == 0) {
+            //         count++;
+            //     }
+            // }
+            // if (count == 2) {
+            //     count++
+            // } else {
+            //     document.write('No');
+            // }
+        // }
+
+        // document.write(count)
+    </script>
+    <!-- <div id="div_wrapper" style="width: 500px; height: 200px; background: red">
+ 
+    </div>
+    <script>
+        var obj = document.getElementById('div_wrapper');
+        obj.addEventListener('mouseout', function(){
+            obj.style.background = 'red';
+        });
+        obj.addEventListener('mouseover', function(){
+            obj.style.background = 'blue';
+        });
+    </script> -->
+    <!-- <input type="button" id="btn" value="Di chuyển vào đây"/>
+<script>
+    var obj = document.getElementById('btn');
+    obj.onmouseout = function(){
+        alert('Bạn đã di chuyển chuột ra ngoài thẻ input');
+    };
+</script> -->
+    <!-- <input type="button" onmouseout="callMouseOutEvent()" value="Di chuyển vào đây"/>
+<script>
+    function callMouseOutEvent(){
+        alert('Bạn đã di chuyển chuột ra ngoài thẻ input');
+    }
+</script> -->
+    <!-- <script>
+        // let numbers= parseInt(prompt )
+        // let count = 0;
+
+    </script> -->
+</body>
+</html>
