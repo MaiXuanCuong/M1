@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let useName = prompt('Tên của bạn');
-        if (useName == 'admin') 
-         { 
-            alert ('welcome')
-        } else if (useName == null) {
-            alert ('canceled');
+      let useName = prompt('Tên của bạn');
+      if (useName == 'admin')
+        {let pass = prompt('password');
+      if (pass == 'TheMaster'){
+          alert ('welcome')
+      } else if (pass == 'null') {
+          alert ('canceled');
+          
         }else {
-            alert ("I don't like you");
-        
-        } let pass = prompt('password');
-        if (pass == 'TheMaster') {
-            
+          alert ('wrong password') ;
         }
-        else if (pass == null) {
-            alert ('canceled');
+     } else if (useName == 'null') {
+          alert ('canceled');
         } else {
-            alert ('wrong password')
+            alert ("I don't know you");
         }
-            alert ('welcome');
-        
-           
+          
+    
     </script>
-</body>
+  </body>
 </html>
