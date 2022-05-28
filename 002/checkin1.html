@@ -7,14 +7,14 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
+    <!-- <script>
       for (i  = 2; i <=9; i++) {
         for (j = 1; j <=10; j++) {
           console.log(i + ' * ' + j + ' = ' + i * j)
         }
         console.log ('================')
       }
-    </script>
+    // </script> -->
     <!-- <script>
       for (let i = 10; i > 4; i--) {
         if (i==7) {
@@ -76,5 +76,78 @@
     //   }
     //   console.log(total);
     // </script> -->
+    <!-- <script>
+      var tusach = [
+        ["văn", "sử", "địa"], //0
+          // 0  1   2   
+        ["toán", "lý", "hóa"], //1
+            // 0  1   2 
+      ];
+      console.log(tusach[0]); // ['văn', 'sử', 'địa']
+      console.log(tusach[0][0]); // văn
+      console.log(tusach[0][1]); // sử
+      console.log(tusach[0][2]); // địa
+
+      console.log(tusach[1]);
+      console.log(tusach[1][0]); // toán
+      console.log(tusach[1][1]); // lý
+      console.log(tusach[1][2]); // hóa
+      // thay đổi
+      tusach[0][0] = 'văn học';
+      tusach[1][2] = 'hóa học';
+      tusach[1][1] = 'vật lý';
+      console.log(tusach);
+      //duyệt
+      //vòng lặp
+      for(var i=0;i<=1;i++) {
+        for(var k =0; k<=2;k++) {
+          console.log(tusach[i][k]);
+        }
+        
+        /*
+        i:0
+        k:0
+        k:1
+        k:2
+        tusach[0][0];
+        tusach[0][1];
+        tusach[0][2];
+        tusach[i][k];
+        */
+       /*
+        i:1
+        k:0
+        k:1
+        k:2
+        tusach[1][0];
+        tusach[1][1];
+        tusach[1][2];
+        tusach[i][k];
+        */
+      }
+      // thêm phần tử vào mảng
+      // thêm tiếng anh vào sau hóa
+      tusach[1][3]= 'tiếng anh';
+      tusach[0][3]= 'sinh học';
+      // thêm sinh học vào sau địa    
+    </script>
+    <-- <script>
+      var book1 =['văn', 'sử', 'địa'];
+      var book2 =['toán', 'lý', 'hóa'];
+      var tusach = [book1,book2];
+      console.log(tusach);
+    </script> --> 
+<script>
+  // tọa mảng cha
+  var numbers = []
+  for( var index=0; index <=2; index ++) {
+    //những phần tử con của mảng cha
+    numbers[index]= [];
+    // lần lượt đưa các phần tử vào mảng
+    for ( var k=0; k<=2; k++) {
+      numbers[index][k] = index + '-' + k;
+    }
+  }console.log( numbers );
+</script>
   </body>
 </html>

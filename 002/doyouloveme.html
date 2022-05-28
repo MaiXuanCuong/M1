@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <style>
+    <style>
         #do {
             position : absolute;
             left: 285px;
@@ -21,28 +21,28 @@
             left:285px;
             top:210px
         }
-        b {
-            color : pink
-        }
+       
+        
     </style>
 </head>
 <body>
     <form><b>Thoát ra là đồng ý nhé</b>
-        <label><b>bảo an cho anh cường 100 ngàn nhé </b></label><br>
+        <label><b>em yêu anh không </b></label><br>
         <input id="do" type="button" value="có" onclick="yes();">
         <input id="do2" type="button" value="không"  onmouseover="no();">
     </form>
-    <script>
-        function yes() {
-            alert("Anh xin nhé hihi!")
-        }
-        function no() {
-        var x =  Math.round(Math.random() * window.innerWidth);
-        var y = Math.round(Math.random() * window.innerHeight);
-        document.getElementById('do2').style.left = x + 'px';
-        document.getElementById('do2').style.top = y + 'px';
-    }
-   
-    </script>
-</body>
+        <script >
+            function yes()
+            {
+                alert("Anh cũng vậy ");
+            }
+            function no()
+            {
+                var x = Math.round(Math.random() * window.innerWidth);
+                var y = Math.round(Math.random() * window.innerHeight);
+                document.getElementById("do2").style.left = x + 'px';
+                document.getElementById("do2").style.top = y + 'px';
+            }
+            </script>
+    </body>
 </html>
