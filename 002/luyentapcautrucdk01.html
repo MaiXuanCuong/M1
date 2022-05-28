@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<input type="button" onclick="bai1()" value="Bài 1"><p>kiểm tra xem a có chia hết cho b hay không</p>
+<br><input type="button" onclick="bai2()" value="Bài 2"><p>tuổi học sinh có đủ tuổi học lớp 10.</p>
+<br><input type="button" onclick="bai3()" value="Bài 3"><p>Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</p>
+<br><input type="button" onclick="bai4()" value="Bài 4"><p>Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</p>
+<br><input type="button" onclick="bai5()" value="Bài 5"><p>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</p>
+<br><input type="button" onclick="bai6()" value="Bài 6"><p>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</p>
+<br><input type="button" onclick="bai7()" value="Bài 7"><p>Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</p>
+
+<script>
+    function bai1() {
+        let so1 = Number(prompt("nhập số a"))
+        let so2 = Number(prompt("nhập số b"))
+        if (so1%so2 == 0){
+            alert(so1 + " Chia hết cho "+so2)
+        }else{
+            alert(so1 + " Không chia hết cho "+so2)
+        }
+    }
+    
+    function bai2() {
+        let tuoi = Number(prompt("nhập tuổi học sinh"))
+        if(tuoi >= 14 && tuoi<=18){
+            alert("Học sinh đủ điều kiện nhập học lớp 10")
+        }else if(tuoi>18){
+            alert("Học sinh quá tuổi nhập học")
+        }else{
+            alert("Học sinh không đủ tuổi nhập học")
+        }
+    }
+
+    function bai3() {
+        let so = Number(prompt("nhập số bất kì"))
+        if(so > 0){
+            alert("Số " + so +" lớn hơn 0") 
+        }else if (so==0){
+            alert("Số " + so +" bằng 0")
+        }else {
+            alert("Số " + so +" bé hơn 0")
+        }
+    }
+    
+    function bai4() {
+        let so1 = Number(prompt("nhập số thứ 1"))
+        let so2 = Number(prompt("nhập số thứ 2"))
+        let so3 = Number(prompt("nhập số thứ 3"))
+        let max = so1
+        if (so2 >max){
+            max = so2
+        } if(so3> max){
+            max = so3
+        
+        }
+        alert("số lớn nhất trong 3 số ["+so1+" , "+so2+" , "+so3+"] là "+max)
+    }
+
+    function bai5(){
+        let diemcacbaikiemtra = Number(prompt("nhập điểm trung bình của các bài kiểm tra"))
+        let diemgiuaky = Number(prompt("nhập điểm giữa kỳ"))
+        let diemcuoiky = Number(prompt("nhập điểm cuối kỳ"))
+        let diemtrungbinh = 0
+        diemtrungbinh = (diemcacbaikiemtra + diemcuoiky + diemgiuaky)/3
+        if (diemtrungbinh >= 8){
+            alert("Học sinh giỏi")
+        } else if(diemtrungbinh>= 7){
+            alert("Học sinh khá")
+        }else if(diemtrungbinh>=5){
+            alert("Học sinh trung bình")
+        }else if(diemtrungbinh>=3.5){
+            alert("Học sinh yếu")
+        }else{
+            alert("Học lại")
+        }
+    }
+
+
+    function bai6() {
+        let hoahong = Number(prompt("Nhập % chiếu khấu hoa hồng"))
+        let giaban = Number(prompt("Nhập giá trung bình 1 sản phẩm"))
+        let soluong = Number(prompt("Nhập số lượng sản phẩm đã bán"))
+        let tien = ((giaban*soluong)*hoahong)/100
+        document.write("Bạn hưởng "+hoahong+"% hoa hồng. với giá bán 1 sản phẩm là : "+giaban+" VNĐ số lượng đã bán được : "+soluong+"<br>")
+        document.write("Tổng tiền là đã bán được "+(giaban*soluong)+" VNĐ <br> Số tiền bạn được hưởng là "+tien+" VND")
+    }
+
+
+    function bai7() {
+        let sodien = Number(prompt("Nhập số điện nhà bạn dùng đơn vị kwh"))
+        let tiendien =0
+        if(sodien <=50){
+            tiendien = 1678 * sodien
+        }else if(sodien<=100){
+            tiendien = (50*1678) + ((sodien-50)*1734)
+        }else if(sodien<=200){
+            tiendien = (50*1678) + (50*1734) + ((sodien-100)*c)
+        }else if(sodien<=300){
+            tiendien = (50*1678) + (50*1734) + (100*2014) + ((sodien - 200)*2536)
+        }else if(sodien<=400){
+            tiendien = (50*1678) + (50*1734) + (100*2014) + (100*2536) + ((sodien -300)*2834)
+        }else{
+            tiendien = (50*1678) + (50*1734) + (100*2014) + (100*2536) + (100*2834) + ((sodien -400)*2927)
+        }
+        document.write("Số điện nhà bạn hiện tại là "+sodien +"kWh")
+        document.write("<br>Số tiền điện là "+tiendien+" VNĐ")
+    }
+</script>
+</body>
+</html>
