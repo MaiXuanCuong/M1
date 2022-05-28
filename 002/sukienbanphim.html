@@ -2,52 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        
-    </style>
-</head>
-<body>
-    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0;top:0;" height="100" width="80"/>
-    <script>
-        function upArrowPressed() {
-    let element = document.getElementById("nobita");
-    element.style.top = parseInt(element.style.top) - 5 + 'px';
-}
-function downArrowPressed() {
-    var element = document.getElementById("nobita");
-    element.style.top = parseInt(element.style.top) + 5 + 'px';
-}
-function leftArrowPressed() {
-    var element = document.getElementById("nobita");
-    element.style.left = parseInt(element.style.left) - 5 + 'px';
-}
-function rightArrowPressed() {
-    var element = document.getElementById("nobita");
-    element.style.left = parseInt(element.style.left) + 5 + 'px';
+    <title>Sự kiên bàn phím</title>
 
-}
-function moveSelection(evt) {
-    switch (evt.keyCode) {
-        case 37:
-            leftArrowPressed();
-            break;
-        case 39:
-            rightArrowPressed();
-            break;
-        case 38:
-            upArrowPressed();
-            break;
-        case 40:
-            downArrowPressed();
-            break;
-    }
-}
-function docReady() {
-    window.addEventListener('keydown', moveSelection);
-}
+</head>
+<body onload="docReady()">
+<img src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" id="nobita" style="position: absolute; left: 0; top: 0;" height="200" width="180" />
+    <script>
+        //hàm xử lý phím nhấn
+        function xu_ly_phim_nhan_len() {
+            let element = document.getElementById("nobita")
+            element.style.top = parseInt(element.style.top)  - 5 + "px"
+        }
+        //ham xu lý phím nhấn
+        function xu_ly_phim_nhan_xuong() {
+            let element = document.getElementById("nobita")
+            element.style.top = parseInt(element.style.top)  + 5 + "px"
+        }
+        function xu_ly_phim_nhan_sang_trai() {
+            let element = document.getElementById("nobita")
+            element.style.left = parseInt(element.style.left)  - 5 + "px"
+        }
+        function xu_ly_phim_nhan_sang_phai() {
+            let element = document.getElementById("nobita")
+            element.style.left = parseInt(element.style.left)  + 5 + "px"
+        }
+
+        function moveSelection(evt) {
+
+            switch (evt.keyCode) {
+                case 37:
+                    xu_ly_phim_nhan_sang_trai()
+                    break
+                case 39:
+                    xu_ly_phim_nhan_sang_phai()
+                    break
+                case 38:
+                    xu_ly_phim_nhan_len()
+                    break
+                case 40:
+                    xu_ly_phim_nhan_xuong()
+                    break
+            }
+        }
+
+        function docReady() {
+            window.addEventListener('keydown', moveSelection)
+        }
+
     </script>
 </body>
 </html>
