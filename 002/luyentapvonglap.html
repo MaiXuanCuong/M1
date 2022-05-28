@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+#k1 {
+    background-color: rgb(233, 111, 190);
+}
+    </style>
+  </head>
+  <body>
+    <br /><input type="submit" id="k1" value="Bài 1" onclick="bai_1()" />
+    <p>
+      Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộng thoại
+      thông báo
+    </p>
+    <br /><input type="submit" id="k1" value="Bài 2" onclick="bai_2()" />
+    <p>
+      Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi
+      người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm
+      nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    </p>
+    <br /><input type="submit" id="k1" value="Bài 3" onclick="bai_3()" />
+    <p>Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</p>
+    <br /><input type="submit" id="k1" value="Bài 4" onclick="bai_4()" />
+    <p>Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</p>
+    <br /><input type="submit" id="k1" value="Bài 5" onclick="bai_5()" />
+    <p>Tính tổng của 20 số đầu tiên trong dãy fibonacci.</p>
+    <br /><input type="submit" id="k1" value="Bài 6" onclick="bai_6()" />
+    <p>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</p>
+    <br /><input type="submit" id="k1" value="Bài 7" onclick="bai_7()" />
+    <p>
+      Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết
+      cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số
+      đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+    </p>
+    <br /><input type="submit" id="k1" value="Bài 8" onclick="bai_8()" />
+    <p>Game đoán số</p>
+    <script>
+      function bai_1() {
+          //Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộng thoại thông báo
+          for(let i=1;i<=100;i++){
+              document.write(i +"<br>")
+              if(i==99){
+                  alert("Xin chúc mừng")
+              }
+          }
+      }
+
+      function bai_2() {
+          let nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+          while (nhietdo<20 || nhietdo>100){
+              if(nhietdo<20){
+                  alert("Vui lòng tăng nhiệt độ")
+                  nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+              }else if(nhietdo>100){
+                  alert("Vui lòng giảm nhiệt độ")
+                  nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+              }
+          }
+          alert("Nhiệt độ bình thường")
+      }
+
+      function bai_3() {
+          // Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+          let a = 0 , b= 0, c=0
+          let fibonacci = "";
+          for (let i=0; i<20;i++){
+              if(i==0){
+                  a=1
+                  c=1
+                  fibonacci += a+ " "
+              }else{
+
+                  a= b+F1
+                  b = c
+                  c = a
+                  fibonacci += a+ " "
+                  console.log(i +" = "+a)
+              }
+          }
+          document.write(fibonacci)
+      }
+
+      function bai_4(){
+          // Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+          let a = 0 , b= 0, c=0
+          let chia5 = ""
+          let fibonacci = "";
+          for (let i=0; i<20;i++){
+              if(i==0){
+                  a=1
+                  c=1
+                  fibonacci += a+ " "
+              }else{
+
+                  a= b+F1
+                  b = F1
+                  c = a
+                  fibonacci += a+ " "
+                  console.log(i +" = "+a)
+                  if(a%5==0){
+                      chia5 = a
+                      break;
+                  }
+              }
+          }
+
+          document.write("Sô chia hết cho 5 trong dãy là "+chia5)
+      }
+
+      function bai_5() {
+          // Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+          let a = 0 , b= 0, c=0, tong=0
+          let fibonacci = "";
+          for (let i=0; i<20;i++){
+              if(i==0){
+                  a=1
+                  c=1
+                  fibonacci += a+ " "
+                  tong +=a
+              }else{
+                  a= b+c
+                  b = c
+                  c = a
+                  fibonacci += a+ " "
+                  tong +=a
+                  console.log(i +" = "+a)
+              }
+          }
+          document.write("Dãy Fibonacci là "+fibonacci+"<br>")
+          document.write("Tổng của các số = "+tong)
+      }
+
+      function bai_6() {
+          let count = 0, tong =0
+          let dayso =""
+          for (let i=1; ; i++){
+              if(i%7==0){
+                  dayso += i+" "
+                  console.log(dayso)
+                  tong += i
+                  count++
+                  if(count==30) break
+              }
+          }
+          document.write(dayso+"<br>")
+          document.write("Tổng bằng "+tong)
+      }
+
+      function bai_7() {
+          document.write("Hãy viết một chương trình in ra các số từ 1 đến 100. Những số nếu chia hết cho 3 thì in ra \"Fizz\", 5 thì in ra \"Buzz\" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ \"FizzBuzz\".<br>")
+          for (let i=1; i<=100; i++){
+              if (i%3==0 && i%5 ==0){
+                  document.write(" FizzBuzz <br>")
+              }else {
+                  if (i%3==0){
+                      document.write(" Fizz <br>")
+                  }
+                  else if(i%5==0){
+                      document.write(" Buzz <br>")
+                  }
+              }
+          }
+      }
+
+      function bai_8() {
+          let phamvi = Number(prompt("Trò chơi đoán số từ 0 - "))
+          let nhapso = Number(prompt("Nhập vào số muốn đoán"))
+          let soRamdom
+          if(phamvi){
+              soRamdom = Math.floor(Math.random()*phamvi)
+              if(soRamdom == nhapso){
+                  alert("Bạn đã đoán đúng")
+              }else{
+                  if (soRamdom >nhapso){
+                      alert("Bạn đoán sai, số bạn đoán nhỏ hơn")
+                      nhapso = Number(prompt("Nhập vào số muốn đoán"))
+                  } else  {(soRamdom <nhapso)
+                      alert("Bạn đoán sai, số bạn đoán lớn hơn")
+                      nhapso = Number(prompt("Nhập vào số muốn đoán"))
+                  }
+                  alert("Bạn đoán đúng")
+              }
+          }
+      }
+    </script>
+  </body>
+</html>

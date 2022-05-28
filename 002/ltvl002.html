@@ -8,19 +8,18 @@
 </head>
 <body>
     <script>
-    var a=1;
-    var b=1;
-    var c;
-    var num= prompt('Nhập số fibonaci')
-    document.write(a+"<br>");
-    document.write(b+"<br>");
-        for (var i=3; i <=num; i++) {
-            c= a+b;
-            a=b;
-            b=c;
-          document.write(c+'<br/>');
+     let nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+        while (nhietdo<20 || nhietdo>100){
+            if(nhietdo<20){
+                alert("Nhiệt độ quá lạnh")
+                nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+            }else if(nhietdo>100){
+                alert("Nhiệt độ quá nóng")
+                nhietdo = Number(prompt("Nhập vào nhiệt độ"))
             }
-        
+        }
+        alert("Nhiệt độ bình thường")
+    
     </script>
 </body>
 </html>
