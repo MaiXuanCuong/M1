@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Luyện tập cấu trúc điều kiện 02</title>
+  </head>
+  <body>
+    <table border="1" width="500px">
+      <tr align="center">
+        <td>
+          <input type="button" onclick="bai1()" value="Bài 1" />
+          <br /><br /><input type="button" onclick="bai2()" value="Bài 2" />
+          <br /><br /><input type="button" onclick="bai3()" value="Bài 3" />
+          <br /><br /><input type="button" onclick="bai4()" value="Bài 4" />
+          <br /><br /><input type="button" onclick="bai5()" value="Bài 5" />
+          <br /><br /><input type="button" onclick="bai6()" value="Bài 6" />
+          <br /><br /><input type="button" onclick="bai7()" value="Bài 7" />
+          <br /><br /><input type="button" onclick="bai8()" value="Bài 8" />
+          <br /><br /><input type="button" onclick="bai9()" value="Bài 9" />
+          <br /><br /><input type="button" onclick="bai10()" value="Bài 10" />
+          <br /><br /><input type="button" onclick="bai11()" value="Bài 11" />
+          <br /><br /><input type="button" onclick="bai12()" value="Bài 12" />
+        </td>
+        <td>
+          Chuyển °C => °F
+          <br /><br />Chuyển từ mét sang feet: <br /><br />Tính diện tích hình
+          vuông khi biết cạnh a. <br /><br />Tính diện tích hình chữ nhật
+          <br /><br />Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+          <br /><br />Phương trình bậc 1 <br /><br />Phương trình bậc 2
+          <br /><br />Kiểm tra tuổi <br /><br />Kiểm tra một tam giác.
+          <br /><br />
+          Viết chương trình tính giá điện <br /><br />Viết chương trình tính
+          thuế thu nhập cá nhân. <br /><br />
+          Viết chương trình tính lãi ngân hàng (lãi mẹ - lãi con)
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function bai1() {
+        //°C  x  9/5 + 32 = °F
+        let doC = Number(prompt("Nhập nhiệt độ °C cần chuyển sang °F "));
+        let doF = doC * (9 / 5) + 32;
+        alert(doC + "°C sẽ bằng " + doF + "°F");
+      }
+
+      function bai2() {
+        //ft =m * 3.2808
+        let met = Number(prompt("Nhập số met cần chuyển sang feet "));
+        let feet = met * 3.2808;
+        alert(met + " met sẽ bằng " + feet.toFixed(1) + " feet");
+      }
+
+      function bai3() {
+        let canhA = Number(prompt("Nhập cạnh a hình vuông"));
+        let dientich = canhA * canhA;
+        alert("Hình vuông Cạnh a = " + canhA + " có diện tích = " + dientich);
+      }
+
+      function bai4() {
+        let dai = Number(prompt("Nhập chiều dài hình chữ nhật"));
+        let rong = Number(prompt("Nhập chiều rộng hình chữ nhật"));
+        let dientich = dai * rong;
+        alert(
+          "Hình chữ nhật Chiều dài = " +
+            dai +
+            ";chiều rộng = " +
+            rong +
+            "; có diện tích = " +
+            dientich
+        );
+      }
+
+      function bai5() {
+        let AB = Number(prompt("Nhập cạnh kề AB"));
+        let BC = Number(prompt("Nhập cạnh kề BC"));
+        let dientich = (1 / 2) * AB * BC;
+        alert(
+          "Cạnh AB = " + AB + " Cạnh BC = " + BC + " có diện tích = " + dientich
+        );
+      }
+      function bai6() {
+        let a = Number(prompt("Nhập biến a"));
+        let b = Number(prompt("Nhập biến b"));
+        let x = -b / a;
+        alert("Phương trình " + a + "x + " + b + " = 0  Có giá trị x = " + x);
+      }
+
+      function bai7() {
+        let a = Number(prompt("Nhập biến a"));
+        let b = Number(prompt("Nhập biến b"));
+        let c = Number(prompt("Nhập biến c"));
+        let delta = b * b - 4 * a * c;
+        document.write(
+          "Phương trình căn bậc 2 là " +
+            a +
+            "x^2 + " +
+            b +
+            "x + " +
+            c +
+            " = 0<br>"
+        );
+        document.write("Delta = " + delta + "<br>");
+        let x1, x2;
+        if (delta == 0) {
+          x1 = -b / (2 * a);
+          document.write("Phương trình có 1 nghiệm là x = " + x1.toFixed(2));
+        } else if (delta > 0) {
+          x1 = (-b + Math.sqrt(delta)) / (2 * a);
+          x2 = (-b - Math.sqrt(delta)) / (2 * a);
+          document.write(
+            "Phương trình có 2 nghiệm là x1 = " +
+              x1.toFixed(2) +
+              "; x2 = " +
+              x2.toFixed(2)
+          );
+        } else if (delta < 0) {
+          document.write("Phương trình Không có nghiệm");
+        }
+      }
+
+      function bai8() {
+        let tuoi = Number(prompt("Nhập vào tuổi"));
+        if (tuoi > 0 && tuoi < 120) {
+          alert("Tuổi của người là " + tuoi + " tuổi");
+        } else {
+          alert("Đây không phải tuổi của người");
+        }
+      }
+
+      function bai9() {
+        let a = Number(prompt("Nhập cạnh a"));
+        let b = Number(prompt("Nhập cạnh b"));
+        let c = Number(prompt("Nhập cạnh c"));
+        if (a > 0 && b > 0 && c > 0) {
+          if (a + b > c && b + c > a && a + c > b) {
+            alert(
+              "Cạnh a,b,c [" + a + "," + b + "," + c + "] là một hình tam giác"
+            );
+          } else {
+            alert(
+              "Cạnh a,b,c [" +a +"," +b +"," +c +"] KHÔNG phải là một hình tam giác"
+            );
+          }
+        }
+      }
+
+      function bai10() {
+        let sodien = Number(prompt("Nhập số điện nhà bạn dùng đơn vị kwh"))
+        let tiendien =0
+        if(sodien <=50){
+            tiendien = 1678 * sodien
+        }else if(sodien<=100){
+            tiendien = (50*1678) + ((sodien-50)*1734)
+        }else if(sodien<=200){
+            tiendien = (50*1678) + (50*1734) + ((sodien-100)*c)
+        }else if(sodien<=300){
+            tiendien = (50*1678) + (50*1734) + (100*2014) + ((sodien - 200)*2536)
+        }else if(sodien<=400){
+            tiendien = (50*1678) + (50*1734) + (100*2014) + (100*2536) + ((sodien -300)*2834)
+        }else{
+            tiendien = (50*1678) + (50*1734) + (100*2014) + (100*2536) + (100*2834) + ((sodien -400)*2927)
+        }
+        document.write("Số điện nhà bạn hiện tại là "+sodien +"kWh")
+        document.write("<br>Số tiền điện là "+tiendien+" VNĐ")
+    }
+      function bai11() {
+        let sotien = Number(prompt("Nhập số tiền lương của bạn (VNĐ)"));
+        if (sotien < 5000000) {
+          alert(
+            "Lương " +
+              sotien +
+              "VND Bạn mất 5% tiền thuế còn " +
+              (sotien * 95) / 100 +
+              "VND"
+          );
+        } else if (sotien < 10000000) {
+          alert(
+            "Lương " +
+              sotien +
+              "VND Bạn mất 10% tiền thuế còn " +
+              ((sotien * 90) / 100 + 250000) +
+              "VND"
+          );
+        } else if (sotien < 18000000) {
+          alert(
+            "Lương " +
+              sotien +
+              "VND Bạn mất 15% tiền thuế còn " +
+              ((sotien * 85) / 100 + 750000) +
+              "VND"
+          );
+        } else if (sotien < 32000000) {
+          alert(
+            "Lương " +
+              sotien +
+              "VND Bạn mất 20% tiền thuế còn " +
+              ((sotien * 80) / 100 + 1650000) +
+              "VND"
+          );
+        } else if (sotien < 52000000) {
+          alert(
+            "Lương " +
+              sotien +
+              "VND Bạn mất 25% tiền thuế còn " +
+              ((sotien * 75) / 100 + 3250000) +
+              "VND"
+          );
+        } else if (sotien < 80000000) {
+          alert(
+            "Lương " +
+              sotien +
+              "VND Bạn mất 30% tiền thuế còn " +
+              ((sotien * 70) / 100 + 5850000) +
+              "VND"
+          );
+        } else {
+          alert(
+            "Lương " +
+              sotien +
+              "VND Bạn mất 35% tiền thuế còn " +
+              ((sotien * 65) / 100 + 9850000) +
+              "VND"
+          );
+        }
+      }
+
+      function bai12() {
+        let sotien = Number(prompt("Nhập số tiền gửi ngân hàng"));
+        let thang = Number(
+          prompt("Nhập thời gian gửi ngân hàng theo tháng với lãi 4,1%/năm")
+        );
+        let tienlai = 0;
+        let tongtienlai = tienlai;
+        if (thang > 1) {
+          for (let i = 1; i <= thang; i++) {
+            tienlai = ((tongtienlai + sotien) * (4.1 / 12)) / 100;
+            tongtienlai += tienlai;
+            document.write(
+              "Số tiền lãi tháng " +
+                i +
+                " là " +
+                tienlai.toFixed(2) +
+                " VND<br>"
+            );
+          }
+        }
+        document.write(
+          "Số tiền bạn gửi là " +
+            sotien +
+            " VND trong " +
+            thang +
+            " tháng có tổng số lãi = " +
+            tongtienlai.toFixed(2) +
+            " VND"
+        );
+      }
+    </script>
+  </body>
+</html>
