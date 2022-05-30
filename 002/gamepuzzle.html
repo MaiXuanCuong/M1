@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Puzze game</title>
+    <style>
+      .container {
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img {
+    width: 300px;
+    height : 90px;
+    box-shadow: black 2px 3px 3px;
+} 
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <img id="img1" src="" alt="" onclick="imageClick(1)" />
+      <img id="img2" src="" alt="" onclick="imageClick(2)" />
+      <img id="img3" src="" alt="" onclick="imageClick(3)" />
+      <img id="img4" src="" alt="" onclick="imageClick(4)" />
+      <img id="img5" src="" alt="" onclick="imageClick(5)" />
+      <p id="result"></p>
+    </div>
+    <script>
+      var Images = {
+        imgsDB: [
+          [
+            "funny-cat1_part1x1.jpg",
+            "funny-cat1_part2x1.jpg",
+            "funny-cat1_part3x1.jpg",
+            "funny-cat1_part4x1.jpg",
+            "funny-cat1_part5x1.jpg",
+          ],
+          [
+            "monkey_part1x1.jpg",
+            "monkey_part2x1.jpg",
+            "monkey_part3x1.jpg",
+            "monkey_part4x1.jpg",
+            "monkey_part5x1.jpg",
+          ],
+          [
+            "panda_swap_part1x1.jpg",
+            "panda_swap_part2x1.jpg",
+            "panda_swap_part3x1.jpg",
+            "panda_swap_part4x1.jpg",
+            "panda_swap_part5x1.jpg",
+          ],
+        ],
+        imgpos: [0, 0, 0, 0, 0],
+      };
+      function setImagesRandom() {
+        for (var i = 1; i <= 5; i++) {
+          let topicImg = Math.floor(Math.random() * 3);
+          replaceImage(i, topicImg);
+        }
+      }
+      function replaceImage(index, topicImg) {
+        Images.imgpos[index - 1] = topicImg;
+        var imageName = "img" + index.toString();
+        document
+          .getElementById(imageName)
+          .setAttribute("src", "./img/" + Images.imgsDB[topicImg][index - 1]);
+      }
+      function imageClick(index) {
+        var topicImg = Images.imgpos[index - 1];
+        if (topicImg === 0) {
+          replaceImage(index, 1);
+        } else if (topicImg === 1) {
+          replaceImage(index, 2);
+        } else {
+          replaceImage(index, 0);
+        }
+        checkDone();
+      }
+      function checkDone() {
+        var check = true;
+        for (var i = 1; i < 5; i++) {
+          if (Images.imgpos[i] !== Images.imgpos[i - 1]) {
+            check = false;
+          }
+        }
+        if (check == false) {
+          for (var i = 1; i <= 5; i++) {
+            document.getElementById("img" + i).style.boxShadow =
+              "black 2px 3px 3px";
+          }
+          document.getElementById("result").innerHTML = "";
+        } else {
+          for (var i = 1; i <= 5; i++) {
+            document.getElementById("img" + i).style.boxShadow =
+              "green 4px 4px 9px";
+          }
+          document.getElementById("result").innerHTML = "Done!";
+        }
+      }
+      function main() {
+        setImagesRandom();
+      }
+
+      window.onload = main();
+    </script>
+  </body>
+</html>
