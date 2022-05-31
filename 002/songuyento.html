@@ -11,9 +11,9 @@
         function checkNT(number) {
             let count = 0;
             let countSNT = 0;
-            for (let i = 2; i < 1000; i++) {
+            for (let i = 0; i < 1000; i++) {
                 if (countSNT < number) { 
-                    for (let j = 1; j <= i; j++) {
+                    for (let j = 0; j <= i; j++) {
                         if (i % j == 0) {
                             count += 1;
                         }
