@@ -9,13 +9,13 @@
 
 <input type="button" value="Dịch" onclick="dich()">
 <br><br>
-<p id="tieng_viet" />
+<p id="tieng_viet">
 <script>
     let tieng_anh = document.getElementById("tieng_anh")
     console.log(tieng_anh.value)
-    let mangTA = ["how", "old", "are", "you", "i", "am", "fine", "thanks"]
-    let mangTV = ["làm sao", "cũ, cổ xưa", "là", "bạn", "tôi", "là", "khỏe", "cảm ơn"]
-    document.write("Chỉ có thể dịch được các từ ["+mangTA.join(" ")+"]")
+    let mangTA = ["you","u","house","sky","smile","love","sad","name","open","out","hello","i","apple","banana",]
+    let mangTV = ["bạn","bạn","nhà","bầu trời","cười","tình yêu","buồn","tên","mở","thoát","xin chào","tôi","táo","chuối",]
+    document.write("Chỉ có thể dịch được các từ sau do mã nguòn còn hạn chế <br> ["+mangTA.join(", ")+"]")
     let dem =0
     function dich() {
         for (let i=0; i<mangTA.length; i++) {
