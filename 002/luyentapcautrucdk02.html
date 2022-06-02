@@ -48,13 +48,13 @@
         //ft =m * 3.2808
         let met = Number(prompt("Nhập số met cần chuyển sang feet "));
         let feet = met * 3.2808;
-        alert(met + " met sẽ bằng " + feet.toFixed(1) + " feet");
+        alert(met + " met sẽ bằng " + feet.toFixed(2) + " feet");
       }
 
       function bai3() {
         let canhA = Number(prompt("Nhập cạnh a hình vuông"));
         let dientich = canhA * canhA;
-        alert("Hình vuông Cạnh a = " + canhA + " có diện tích = " + dientich);
+        alert("Hình vuông Cạnh a = " + canhA + " có diện tích = " + dientich + "met vuông");
       }
 
       function bai4() {
@@ -92,7 +92,7 @@
         let c = Number(prompt("Nhập biến c"));
         let delta = b * b - 4 * a * c;
         document.write(
-          "Phương trình căn bậc 2 là " +
+          "Phương trình " +
             a +
             "x^2 + " +
             b +
@@ -170,7 +170,7 @@
           alert(
             "Lương " +
               sotien +
-              "VND Bạn mất 5% tiền thuế còn " +
+              "VND Bạn mất 5% tiền thuế bạn còn lại số tiền là " +
               (sotien * 95) / 100 +
               "VND"
           );

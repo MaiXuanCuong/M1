@@ -10,7 +10,7 @@
 <input type="button" value="Bài 3" onclick="bai3()"> Tính giai thừa <br>
 <input type="button" value="Bài 4" onclick="bai4()"> Kiểm tra xem ký tự nhập vào có phải là ký tự số không <br>
 <input type="button" value="Bài 5" onclick="bai5()"> Tìm số nguyên nhỏ nhất <br>
-<input type="button" value="Bài 6" onclick="bai6()"> Kiếm tra ký tự nguyên âm <br>
+<input type="button" value="Bài 6" onclick="bai6()"> Kiếm tra số nguyên dương<br>
 <input type="button" value="Bài 7" onclick="bai7()"> Đổi chỗ 2 nguyên tố <br>
 <input type="button" value="Bài 8" onclick="bai8()"> Đổi chiều mảng <br>
 <input type="button" value="Bài 9" onclick="bai9()"> Kiểm tra ký tự trong mảng <br>
@@ -39,7 +39,7 @@
     }
 
     function bai2() {
-        const pi = 3.14
+        const pi =Math.PI
         let r = Number(prompt("Nhập bán kính hình tròn "))
         let chuvi = chuVi(r,pi)
         let dientich = dienTich(r,pi)
@@ -79,22 +79,22 @@
         let i = prompt("Nhập vào ")
         let check = kiemTraSoHayChuoi(i)
         if(check){
-            alert("Đây là số")
+            alert(i+" Đây là số")
         }else{
-            alert("Đây là chuỗi")
+            alert(i+" Đây là chuỗi")
         }
     }
 
     //bài 5
     function timMin(mang_so) {
-        let backup
+        let sonho= mang_so[0]
         for (let i=0; i<mang_so.length; i++){
-            backup = mang_so[0]
-            if (mang_so[i]< backup){
-                backup = mang_so[i]
+            
+            if (mang_so[i]< sonho){
+                sonho = mang_so[i]
             }
         }
-        return backup
+        return sonho
     }
     function bai5() {
         let mang_so = []
@@ -109,16 +109,18 @@
     //bài 6
     function bai6() {
         let kytu = prompt("Nhập vào ký tự kiểm tra")
-        let check = kiemtraKyTuNguyenAm(kytu)
+        let check = kiemtraso(kytu)
         if(check == true){
-            alert(kytu+ " Đây là ký tự số nguyên âm")
-        }else{
-            alert(kytu+ " Không phải ký tự nguyên âm")
+            alert("số " + kytu+ " là số nguyên dương")
+        }else if(kytu<0){
+            alert("số " + kytu+ " là số nguyên âm ")
+        }else {
+            "số " +  kytu + " không là số nguyên dương và không là số nguyên âm"
         }
 
     }
-    function kiemtraKyTuNguyenAm(kytu) {
-        if(/[a-zA-Z]/.test(kytu) ){
+    function kiemtraso(kytu) {
+        if(kytu >0) {
             return true
         }
         return false
@@ -138,10 +140,13 @@
 
     //bài 8
     function bai8() {
-        let mangso = [4,1,6,8,2,7,0]
-        document.write("Mảng số gồm mang["+mangso+"]<br>")
+        let mangso = []
+        for (let i=0 ; i<5; i++){
+            mangso.push(Number(prompt("Nhập vào mảng số thứ "+i)))
+        }
+        document.write("Mảng số gồm mảng ["+mangso+"]<br>")
         let daoMang = daoMangSo(mangso)
-        document.write("Đổi chỗ mảng số mangdoi["+daoMang+"]")
+        document.write("Đã đổi chiều của mảng thành ["+daoMang+"]")
     }
     function daoMangSo(mangso) {
         return mangso.reverse()

@@ -210,7 +210,7 @@
        
       }var kq = sum(5, 7);
       alert(kq); -->
-      <!-- <script>
+    <!-- <script>
         // tham trị string int bolean float..
         //thay đổi giá trị biến x ko làm thay đổi gái trị biến y
         var a = 5;
@@ -234,6 +234,91 @@
 
       </script>
     </script> -->
+    <!-- <script>
+function hello(a,b,c) {
+  if (a>b && a>c) {
+    alert(a+" là trùm")
+  } else if ( b>a && b>c) {
+
+    alert(b+" là trùm")
+  } else{
+    alert(c+" là trùm")
+  }
+} var a = parseInt(prompt("nhập số a"))
+ var b = parseInt(prompt("nhập số b"))
+ var c = parseInt(prompt("nhập số c"))
+hello(a,b,c);
+    </script>
+    <script>
+      function binhphuong(so) {
+        let ket_qua = so * so;
+
+        return ket_qua;
+   
+      }
+      var so =Number(prompt("nhập số"));
+     
+      document.write("bình phương của " + so + " = " + binhphuong(so));
+    </script> -->
+    <!-- <script>
+      var cuong = {
+        //thuộc tính
+        ten: "Cường",
+        age: 20,
+        addres: "Cam Lộ",
+        gender: "male",
+        //phương thức
+        relax: function () {
+          console.log("Lướt facebook");
+        },
+        work: function () {
+          console.log("Facebook Security");
+        },
+        info : function () {
+          //dùng this để gọi đến thuộc tính
+          console.log('tên ' + this.ten );
+          console.log('age ' + this.age );
+          console.log('Gender ' + this.gender );
+          // dung thí đẻ gọi đến phương thức
+this.relax();
+this.work();
+        }
+
+      };
     
+      //truy cập thuộc tính
+      console.log(cuong.ten);
+      console.log(cuong.age);
+      console.log(cuong.addres);
+      console.log(cuong.gender);
+      //truy cập phương thức
+      cuong.relax();
+      cuong.work();
+      cuong.info();
+      // đặt giá trị thuộc tính
+      cuong.age = 25;
+      cuong.ten = "Phi";
+      cuong.addres = " Gio Linh";
+      cuong.gender = "Khác";
+
+      console.log(cuong);
+    </script> -->
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+      Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+      var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+    </script>
+    <script>
+ var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95,50,40,0,2*Math.PI);
+    ctx.stroke();
+    </script>
+   
   </body>
 </html>

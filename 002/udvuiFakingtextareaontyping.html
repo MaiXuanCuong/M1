@@ -44,12 +44,15 @@
       a[22] = "!";
 
       function typeTextArea() {
-        var t = document.getElementById("textare").value; //go vao
-        var j = a.length; //23
+        // var t = document.getElementById("textare").value; //go vao
+        // var j = a.length; //23
         
 
         if (chay>22) {
-            chay=0; 
+            chay=0;
+            var so = document.getElementById("textare").value;
+                  var so="";
+                  document.getElementById("textare").value=so;
             //
         }
         n += a[chay];
@@ -64,7 +67,7 @@
         //   }
         // }
         // //toi la ..
-        document.getElementById("textare").value = '';
+        // document.getElementById("textare").value = '';
         document.getElementById("textare").value = n;
         return false ;        // n = "";
         // setTimeout("typeTextArea", 1);

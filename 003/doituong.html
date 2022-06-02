@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var cuong = {
+        //thuộc tính
+        ten: "Cường",
+        age: 20,
+        addres: "Cam Lộ",
+        gender: "male",
+        //phương thức
+        relax: function () {
+          console.log("Lướt facebook");
+        },
+        work: function () {
+          console.log("Facebook Security");
+        },
+        info: function () {
+          //dùng this để gọi đến thuộc tính
+          console.log("tên " + this.ten);
+          console.log("age " + this.age);
+          console.log("Gender " + this.gender);
+          // dung thí đẻ gọi đến phương thức
+          this.relax();
+          this.work();
+        },
+      };
+      
+
+      //truy cập thuộc tính
+      console.log(cuong.ten);
+      console.log(cuong.age);
+      console.log(cuong.addres);
+      console.log(cuong.gender);
+      //truy cập phương thức
+      cuong.relax();
+      cuong.work();
+      cuong.info();
+      // đặt giá trị thuộc tính
+      cuong.age = 25;
+      cuong.ten = "Phi";
+      cuong.addres = " Gio Linh";
+      cuong.gender = "Khác";
+
+      console.log(cuong);
+    </script>
+  </body>
+</html>

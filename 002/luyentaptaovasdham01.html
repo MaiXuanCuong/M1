@@ -5,55 +5,57 @@
     <title> Luyện tập tạo và sử dụng hàm</title>
 </head>
 <body onload="alertMessage('hi'); nhapso()">
-<input type="button" value="Bài 3 Tính tổng" onclick="bai3()">
-<input type="button" value="Bài 4 Hàm alert" onclick="bai4()">
-<input type="button" value="Bài 5 Tìm sao" onclick="bai5()">
+<input type="button" value="Bài 3 Tính tổng" onclick="bai3()"><br><br>
+<input type="button" value="Bài 4 Hàm alert" onclick="bai4()"><br><br>
+<input type="button" value="Bài 5 Tìm sao" onclick="bai5()"><br><br>
 <script>
-    //bài 1
-    function alertMessage(str) {
-        let aler = alert("Bài 1 Xin chào")
-        return aler
-    }
+//     function alertMessage() {
+//         let aler = alert("Xin chào")
+//         return aler
+//     }
 
-    //bài 2
-    function hientangso(a) {
-        a++
-        return a
-    }
-    function nhapso() {
-        let so =  hientangso(5)
-        alert("Bài 2 Nhập một số và tăng 1 = " +so)
-    }
-
-
-    //bài 3
-    function tinhtong(a,b) {
-        if(a>b){
-            return "Giá trị a > b xin nhập lại"
-        }
-        return a + b
-    }
-
-    function bai3() {
-        let a = Number(prompt("Nhập số a"))
-        let b = Number(prompt("Nhập số b"))
-        document.write("Tổng của "+a+" + "+b+" = "+tinhtong(a,b))
-    }
     
-    //bài 4
-    function addNumbers() {
-        let firstNum = 4;
-        let secondNum = 8;
-        let result = firstNum + secondNum;
-        return result;
-    }
-    function bai4(){
+//     function doiso(a) {
+//         a++
+//         return a
+//     }
+//     function nhapso() {
+//         let so =  doiso(5)
+//         alert('a=5, a++ = ' +so)
+//     }
+
+
+    
+//     function sum(a,b) {
+    
+//         if(a>b){
+//             alert("a lớn hơn b, xin nhập lại")
+//         } else {
+//             return a + b;
+//    }
+//     }  var kq =sum(a,b)
+//     alert(kq)
+
+
+//     function bai3() {
+//         let a = Number(prompt("Nhập số a"))
+//         let b = Number(prompt("Nhập số b"))
+//         document.write("Tổng của "+a+" + "+b+" = "+sum(a,b))
+//     }
+function bai4(){
         let result = 0;
         result = addNumbers();
         alert(result)
     }
+    
+    function addNumbers() {
+        let firstNum = Number(prompt("Nhập số a"))
+        let secondNum = Number(prompt("Nhập số b"))
+        let result = firstNum + secondNum;
+        return result;
+    }
+    
 
-    //bài 5
     function ngoiSao(sao) {
         let sao1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
         let sao2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
@@ -71,7 +73,7 @@
         if(sao == ""){
             document.write("Không có tên ngôi sao nào")
         }else {
-            document.write("Tên ngôi sao tương ứng của "+timsao+" là "+sao)
+            document.write("Tên ngôi sao của bạn là "+timsao+" là "+sao)
         }
     }
 </script>

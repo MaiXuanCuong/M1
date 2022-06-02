@@ -10,11 +10,12 @@
     <script>
         let a = 0, b = 0, c = 0, tong = 0
         let fibonacci = " "
-        for (let i = 0; i <20 ; i++) {
+        var nhap= prompt("nhập")
+        for (let i = 0; i <nhap ; i++) {
             if (i == 0) {
                 a = 1
                 c = 1
-                fibonacci += a + " "
+                fibonacci += +'0'+ a +" "
                 tong +=a
             }else {
                 a = b + c
