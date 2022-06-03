@@ -29,8 +29,8 @@
       // khởi tạo đối tượng
       var hcn = new hinhchunhat();
       // đặt giá trị thuộc tính
-      hcn.chieudai = 20;
-      hcn.chieurong = 10;
+      hcn.chieudai = parseFloat(prompt("nhập chiều dài hcn"));
+      hcn.chieurong = parseFloat(prompt("nhập chiều rộng hcn"));
       document.write("Diện tích hình chữ nhật là "+ hcn.tinhdientich()+"<br>")
       document.write("Chu vi hình chữ nhật là "+ hcn.tinhchuvi())
     </script>
