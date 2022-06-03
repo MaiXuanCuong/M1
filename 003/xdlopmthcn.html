@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var hinhchunhat = function () {
+        //thuộc tính
+        this.chieudai = "";
+
+        this.chieurong = "";
+        // phương thức
+        this.tinhdientich = function () {
+          var kq = this.chieudai * this.chieurong;
+          return kq;
+        };
+        this.tinhchuvi = function () {
+          var kq = (this.chieudai + this.chieurong) * 2;
+          return kq;
+        };
+        this.tinhdientich();
+        this.tinhchuvi();
+      };
+
+      // khởi tạo đối tượng
+      var hcn = new hinhchunhat();
+      // đặt giá trị thuộc tính
+      hcn.chieudai = 20;
+      hcn.chieurong = 10;
+      document.write("Diện tích hình chữ nhật là "+ hcn.tinhdientich()+"<br>")
+      document.write("Chu vi hình chữ nhật là "+ hcn.tinhchuvi())
+    </script>
+  </body>
+</html>

@@ -53,3 +53,88 @@
   console.log(phi);
   console.log(thang);
 </script>
+<!-- <script>
+  /*
+ var TEN_LOP = funnction(){
+     //thuộc tính
+     this.TEN_THUOC_TINH_1 = '';
+     this.TEN_THUOC_TINH_2 = '';
+     //phương thức
+     this.TEN_PHUONG_THUC_1 = function(){
+     
+     }
+     this.TEN_PHUONG_THUC_2 = function(){
+     
+     }
+ }
+ */
+var  Mobile = function(){
+    //thuoc tinh
+    this.pin = 0;
+    this.tindangsoanthao = "";
+    this.hopthuden = [];
+    this.tindagui = [];
+    this.trangthai = false;
+    //phuong thuc
+    this.kiemtra = function(){
+
+    }       
+    this.bat = function(){
+     this.trangthai = true
+     
+    }  
+    this.tat = function(){
+     this.trangthai = false
+    }
+    this.sac = function(){
+     this.pin = 100;
+    }
+    this.soantin = function(tinnhan){
+     this.tindangsoanthao = tinnhan
+    }
+    this.nhantinnhan = function( noidung ){
+     this.hopthuden.push(noidung)
+
+    }
+    this.guitinnhan = function( Mobie2 ){
+        //gui tn cho dien thoai khac nhan tn
+         Mobie2.nhantinnhan( this.tindangsoanthao );
+
+         //luu vao hop thu da gui
+         this.tindagui.push(this.tindangsoanthao)
+
+         //giam % pin
+         this.pin --
+
+         //xoa tin dang soan
+         this.tindangsoanthao = ""
+
+    }
+    this.xemtin = function(){
+     console.log(this.hopthuden)
+    }
+}
+//khoi tao doi tuong
+var Nokia = new Mobile();
+var Iphone = new Mobile();
+
+//sac pin
+Nokia.sac();
+//bat dien thoai
+Nokia.bat();
+
+//tin nhan 1
+//soan tin nhan
+Nokia.soantin('xin chao');
+//gui tin nhan
+Nokia.guitinnhan(Iphone)
+
+//tin nhan 2
+Nokia.soantin('hello')
+//gui tin nhan
+Nokia.guitinnhan(Iphone)
+//iphone xem tin nhan
+Iphone.xemtin();
+
+
+</script> -->

@@ -1,0 +1,29 @@
+
+    <script>
+    class Battery {
+        //thuoc tinh
+        //ham tao
+        constructor( ts_engry, ts_name ){
+            this.enegry = ts_engry;
+            this.name   = ts_name;
+        }
+
+        //phuong thuc
+        setEnegry( ts_engry ){
+            this.enegry = ts_engry;
+        }
+
+        getEnegry(){
+            return this.enegry
+        }
+
+        decreaseEnegry(){
+            this.enegry--;
+        }
+    }
+
+    var battery1 = new Battery( 100, 'Pin con tho' );
+    battery1.setEnegry(200);
+
+    console.log ( battery1.getEnegry()   );  
+</script>

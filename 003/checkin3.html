@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Battery = function (ts_enegry, ts_name) {
+            // thuộc tính
+            this.energy = ts_enegry;
+            this.name = ts_name
+            // phương thức
+            /*
+            set : thiết lập
+            get : lấy
+            setTenthuoctinh: gán giá trị cho thuộc tính đó
+            getTenthuoctinh : trả về  gía trị thuộc tính đó*/
+            this.setEnergy = function (ts_enegry) {//void
+                this.energy = ts_enegry;
+            }
+            this.getEnergy = function () {//int
+                return this.energy;
+            }
+            // giảm pin xuống
+            this.decreaseEnergy = function () {// void
+                this.energy--;
+            }
+        }
+        // khởi tạo đối tượng
+         var pin = new Battery(100, "pin con thỏ");
+         // gọi phương thức đặt giá trị thuộc tính
+         pin.setEnergy(100);
+         // gọi thuộc tính trả về thuộc tính enegry
+         console.log(pin.getEnergy());
+    </script>
+</body>
+</html>

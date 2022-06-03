@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var temperature = function () {
+            // thuộc tính
+             this.doC =0;
+             // phương thức
+            this.CsangF = function () {
+              var kq =  this.doC* 0.5
+              return kq
+            }
+            this.CsangK = function () {
+                var kq =  this.doC* 0.7
+                return kq 
+            }
+        }
+        var chuyendoi = new temperature();
+        chuyendoi.doC = parseFloat(prompt("Nhập độ C"));
+        var doF = chuyendoi.CsangF();
+        document.write("Chuyển đổi độ C sang độ F: "+ chuyendoi.doC+"°C" + " = " + doF +"°F" +"<br>")
+        var doK = chuyendoi.CsangK();
+        document.write("Chuyển đổi độ C sang độ K: "+ chuyendoi.doC+"°C" + " = " + doK  +"°K" +"<br>")
+
+
+    </script>
+    
+</body>
+</html>
