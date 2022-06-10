@@ -2,40 +2,65 @@
 <script>
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
-// vẽ đường thẳng
-    ctx.moveTo(200,0);//x,y
-    ctx.lineTo(200,300);//x,y
-    ctx.stroke();
-// vẽ đường thứ 2 
-    ctx.moveTo(0,0);//x,y điểm bắt đầu
-    ctx.lineTo(200,300);//x,y điểm nối
-    ctx.stroke();
-    // vẽ đường tròn
-    ctx.beginPath();
-    ctx.arc(95,50,40,0,2*Math.PI);
-    //x,y,r,sAngle: điểm bắt đầu, eAngle: điểm kết thúc, pi*2 là mộtt hình tròn
-    ctx.stroke();
-    // vẽ chữ
-    ctx.font = "30px Arial";
-    ctx.fillText("Hello World",10,50);
-    // vẽ chữ
-    ctx.font = "30px Arial";
-    ctx.strokeText("Hello World",10,100);
-   //vẽ hình chữ nhật
-   ctx.fillStyle = '#fa4b2a';
-    var x = 10;
-    var y = 40;
-    ctx.fillRect(x, y, 50, 50);
+// // vẽ đường thẳng
+//     ctx.moveTo(200,0);//x,y
+//     ctx.lineTo(200,300);//x,y
+//     ctx.stroke();
+// // vẽ đường thứ 2 
+//     ctx.moveTo(0,0);//x,y điểm bắt đầu
+//     ctx.lineTo(200,300);//x,y điểm nối
+//     ctx.stroke();
+//     // vẽ đường tròn
+//     ctx.beginPath();
+//     ctx.arc(95,50,40,0,2*Math.PI);
+//     //x,y,r,sAngle: điểm bắt đầu, eAngle: điểm kết thúc, pi*2 là mộtt hình tròn
+//     ctx.stroke();
+//     // vẽ chữ
+//     ctx.font = "30px Arial";
+//     ctx.fillText("Hello World",10,50);
+//     // vẽ chữ
+//     ctx.font = "30px Arial";
+//     ctx.strokeText("Hello World",10,100);
+//    //vẽ hình chữ nhật
+//    ctx.fillStyle = '#fa4b2a';
+//     var x = 10;
+//     var y = 40;
+//     ctx.fillRect(x, y, 50, 50);
 
-    setInterval( function(){
-        //xóa hình cũ
-        ctx.clearRect(x, y, 50, 50);
+//     setInterval( function(){
+//         //xóa hình cũ
+//         ctx.clearRect(x, y, 50, 50);
 
-        x += 10;
-        y += 10;
+//         x += 1;
+//         y += 1;
 
-        //vẽ hình
-        ctx.fillRect(x, y, 50, 50);
+//         //vẽ hình
+//         ctx.fillRect(x, y, 50, 50);
 
-    }, 100 );
+//     }, 1 );
+
+    // ctx.fillStyle = '#fa4b2a';
+    // var a = 1;
+    // var b = 1;
+    // ctx.fillRect(a, b, 50, 50);
+
+    // setInterval( function(){
+    //     //xóa hình cũ
+    //     ctx.clearRect(a, b, 50, 50);
+
+    //     a += 1;
+    //     b += 1;
+
+    //     //vẽ hình
+    //     ctx.fillRect(a, b, 50, 50);
+
+    // }, 1 );
+    setInterval (start,100);
+
+function start() {
+    context.clearRect(0,0,1500,500);
+    context.fillStyle ="red";
+    context.fillRect(100,500,40,40);
+
+}
 </script>

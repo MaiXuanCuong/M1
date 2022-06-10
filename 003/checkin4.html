@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      function compareTriplets(a, b) {
+        for (var i = 0; i < a.length; i++) {
+          if (a[i] > b[i]) {
+            var total = 0;
+            total += 1;
+          }
+          if (a[i] < b[i]) {
+            var total1 = 0;
+            total1 += 1;
+          }
+        }
+        console.log(total+" "+total1);
+        // console.log(total1);
+      }
+      var a = [5,6,7];
+      var b = [3,6,10];
+      compareTriplets(a,b)
+    </script> -->
+    <!-- <script>
+        var arr = [
+        [1,2,3], // 0 
+        //o 1 2
+        [4,5,6], //1
+        //0 1 2 
+        [9,8,9] //2
+        //o 1 2
+    ];
+    //arr[0][0]
+    //arr[1][1]
+    //arr[2][2]
+    var tongphai = 0
+    for (var i = 0; i<arr.length; i++){
+
+        tongphai += arr[i][i]
+    }
+
+    var tongtrai = 0;
+    var k = arr.length - 1;// k = 2
+    for (var i = 0; i < arr.length; i++){
+        tongtrai += arr[i][k];
+        k--;
+    }
+
+    var kq = tongphai - tongtrai;
+    kq = Math.abs(kq)
+    console.log(kq)
+    //arr[0][2]
+    //arr[1][1]
+    //arr[2][0] -->
+
+    <!-- </script>
+    <script>
+      var soduong = 0;
+      var soam = 0;
+      var sokhong = 0;
+      var arr = [1, 1, 0, -1, -1];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+          soduong++;
+        }
+        if (arr[i] < 0) {
+            soam++;
+        }
+        if (arr[i] == 0) {
+          sokhong++;
+        }
+      }
+
+
+
+      var kq = soduong / arr.length;
+      var kq1 = soam / arr.length;
+      var kq2 = sokhong / arr.length;
+      console.log(kq.toFixed(6));
+      console.log(kq1.toFixed(6));
+      console.log(kq2.toFixed(6));
+    </script> -->
+    
+    <!-- <script>
+        for (let i = 1; i <= 5; i++) {
+    console.log("#".repeat(i).padStart(5));
+}
+    </script> -->
+    <!-- <script>;
+        var total =0;
+        
+        var sum = [1,6,5,2,9,7,4,3,7];
+        sum.sort(function(a, b){return a - b});
+        console.log (sum)
+        for (var i=0; i < sum.length; i++) {
+           
+            total += sum[i]
+        
+        } console.log(total)
+        console.log(total - sum[0])
+        console.log(total - sum[sum.length -1])
+    </script> -->
+    <!-- <script>
+      
+        var arr = [3,2,1,3]
+
+        var max = arr[0]
+        for (var i = 0; i<arr[arr.length];i++) {
+            if (arr[i] >= max) {
+                max = arr[i]
+            }
+        }
+
+        var dem = 0;
+        for (var k = 0; k < arr.length; k++) {
+            if (arr[k] == max){
+                dem ++
+            }
+        }
+
+
+        console.log(dem)
+    </script> -->
+    <!-- <script>
+        function timeCoversion(s) {
+            let amPm = s.charAt(8);
+            let gio= "";
+            if (amPm == "A") {
+                if (s.substring(0,2)== "12") {
+                    gio = "00";
+                } else {
+                    gio = s.substring(0,2);
+                }
+            }else { // "Pm"
+            if (s.substring(0,2)== "12"){
+                gio= s.substring(0,2);
+            } else {
+                gio= parseInt(s.substring(0,2), 10) + 12;
+            }
+        }
+        return gio + s.substring(2,8);
+        console.log(gio)
+        }
+ 
+    </script> -->
+    <!-- <script>
+      function xoringNinja(arr) {
+		var or = 0;
+
+		for (var j = 0; j < arr.length; j++) {
+			or |= arr[j];
+		}
+		var orb = new BigInteger(String.valueOf(or));
+		orb = orb.shiftLeft(arr.length - 1);
+		orb = orb.mod(new BigInteger("1000000007"));
+		return orb.intValue();
+	}vâr
+	
+    </script> -->
+    <!-- <script>
+
+function xoringNinja(arr) {
+    return BigInt(arr.reduce((a, b) => a | b, 0))
+    * 2n ** BigInt(arr.length - 1) % 1000000007n;
+}function xoringNinja(arr) {
+    let ans = arr.reduce((a, b) => a | b, 0);
+    for(let i = 1; i < arr.length; i++) {
+        ans <<= 1;
+        if(ans > 1000000006) ans -= 1000000007;
+    }
+    return ans;
+}
+    </script> -->
+    <script>
+for(var x = 2017; x > 0; x--)
+{
+    console.log(x);
+    break;
+}
+    </script>
+  </body>
+</html>

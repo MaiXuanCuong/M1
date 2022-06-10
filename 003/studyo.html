@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+   
+    <!-- <script>
+      let phamvi = Number(prompt("Trò chơi đoán số từ 0 - "));
+      let nhapso = Number(prompt("Nhập vào số muốn đoán"));
+      let soRamdom;
+      if (phamvi) {
+        soRamdom = Math.floor(Math.random() * phamvi);
+        if (soRamdom == nhapso) {
+          alert("Bạn đã đoán đúng");
+        } else {
+          if (soRamdom > nhapso) {
+            alert("Bạn đoán sai, số bạn đoán nhỏ hơn");
+            nhapso = Number(prompt("Nhập vào số muốn đoán"));
+          } else {
+            soRamdom < nhapso;
+            alert("Bạn đoán sai, số bạn đoán lớn hơn");
+            nhapso = Number(prompt("Nhập vào số muốn đoán"));
+          }
+          alert("Bạn đoán đúng");
+        }
+      } -->
+
+
+    <div><canvas id="myCanvas" width="600" height="700"></canvas></div>
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+
+      var x1 = 50;
+      var x2 = 250;
+      var x3 = 450;
+      var y = 100;
+
+      var hinh1 = function () {
+        ctx.fillStyle = "blue";
+
+        ctx.fillRect(x1, y, 150, 300);
+      };
+
+      var hinh2 = function () {
+        ctx.fillStyle = "black";
+
+        ctx.fillRect(x2, y, 150, 300);
+      };
+      var hinh3 = function () {
+        ctx.fillStyle = "yellow";
+
+        ctx.fillRect(x3, y, 150, 300);
+      };
+
+      var dx = 1;
+      var dy = 0;
+      var count = 1
+     
+     
+     
+  
+      var hinh1a = new hinh1();
+      var h1 = setInterval(function () {
+        ctx.clearRect(x1, y, 150, 300);
+        dichuyen1();
+
+        ctx.fillRect(x1, y, 150, 300);
+        vacham1();
+        hinh1();
+      });
+
+     
+      var hinh2a = new hinh2();
+      setInterval(function () {
+        ctx.clearRect(x2, y, 150, 300);
+
+        dichuyen2();
+
+        ctx.fillRect(x2, y, 150, 300);
+        vacham2();
+        hinh2();
+      });
+      var hinh3a = new hinh3();
+      setInterval(function () {
+        ctx.clearRect(x3, y, 150, 300);
+        dichuyen3();
+
+        ctx.fillRect(x3, y, 150, 300);
+        vacham3();
+        hinh3();
+      });
+      function dichuyen1() {
+        x1 += dx;
+        y += dy;
+      };
+
+      function dichuyen2() {
+        x2 +=dx;
+        x2 +=dy
+        y += dy;
+      };
+      function dichuyen3() {
+        x3 += -dx;
+        y += dy;
+      };
+      function vacham1() {
+        if (x1 >= 250) {
+          dx = -dx;
+        }
+       else if (x1 <= 50) {
+          dx = -dx;
+          count++;
+        }
+      };
+      if (count == 5) {
+        dx = 0;
+      };
+      function vacham2() {
+      
+        if (y >= 105) {
+          dy = -dy;
+        }
+      else  if (x2 <= 50) {
+          dx = -dx;
+          count++;
+        }
+        if (count == 5) {
+          dx = 0;
+        }
+      };
+      
+     
+     
+
+      function vacham3() {
+        if (x3 <= 250) {
+      
+          dx = -dx;
+        }
+       else if (x3 <= 50) {
+          dx = dx;
+          count++;
+        }
+        if (count == 5) {
+          dx = 0;
+        }
+      }
+     
+     
+
+      //     var canvas = $("myCanvas")
+      // $("#canvas").click(CanvasClick);
+      // function CanvasClick(){
+      //       alert("hehe")
+      //     }
+      //     R = Raphael("canvas", "100%", "100%"),
+      // R.dblclick(myDblClick);
+      // CanvasClick()
+    </script>
+  </body>
+</html>
