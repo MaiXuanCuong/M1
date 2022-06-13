@@ -61,14 +61,14 @@
     }
 
     function bai5(){
-        let diemcacbaikiemtra = Number(prompt("nhập điểm trung bình của các bài kiểm tra"))
-        let diemgiuaky = Number(prompt("nhập điểm giữa kỳ"))
-        let diemcuoiky = Number(prompt("nhập điểm cuối kỳ"))
+        let diemcacbaikiemtra = Number(prompt("nhập điểm trung bình của các bài kiểm tra 'điểm phẩy nhập bằng dấu chấm.'"))
+        let diemgiuaky = Number(prompt("nhập điểm giữa kỳ 'điểm phẩy nhập bằng dấu chấm.'"))
+        let diemcuoiky = Number(prompt("nhập điểm cuối kỳ 'điểm phẩy nhập bằng dấu chấm.'"))
         let diemtrungbinh = 0
         diemtrungbinh = (diemcacbaikiemtra + diemcuoiky + diemgiuaky)/3
         if (diemtrungbinh >= 8){
             alert("Học sinh giỏi")
-        } else if(diemtrungbinh>= 7){
+        } else if(diemtrungbinh>=6.5){
             alert("Học sinh khá")
         }else if(diemtrungbinh>=5){
             alert("Học sinh trung bình")

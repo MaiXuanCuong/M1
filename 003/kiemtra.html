@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        var mangdiem = [3,4,5];
+        var diemtrungbinh = 0;
+        var tong = 0;
+        function findAvg() {
+          for (j = 0; j < mangdiem.length; j++) {
+            tong += mangdiem[j];
+          }
+          diemtrungbinh = tong / mangdiem.length;
+          document.write( "Điểm trung bình là: " +diemtrungbinh);
+        }
+        findAvg();
+      </script>
+  </body>
+</html>

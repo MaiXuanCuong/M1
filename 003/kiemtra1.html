@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+         var x = Number(prompt("Nhập x"))
+      var index = Number(prompt("nhập số index"))
+     
+      var mang = [x, index];
+      function insertNumberToArray() {
+        for (var i = 0; i < mang.length; i++) {
+          if (index < 0 || index > mang.length) {
+            document.write( "Mảng = [" +mang + "]");
+            return mang;
+          } else {
+     var mang1 = [mang[0]]
+            document.write("Mảng = [" +mang1+ "]");
+            return mang1
+         
+        
+          }
+        }
+       
+      }
+      insertNumberToArray();
+    </script>
+  </body>
+</html>

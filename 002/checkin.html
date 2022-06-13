@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <script>
+  <body> -->
+    <!-- <script>
      let a= prompt('số thứ nhất');
      let b= prompt('số thứ hai');
      let x= -b/a;
@@ -22,7 +22,7 @@
              
          }
      } else {alert('phương trình có nghiệm'+x)}
-    </script>
+    </script> -->
     <!-- <script>   
       let day = 8;
       switch (true) {
@@ -79,5 +79,194 @@
           alert("Bạn phải về nhà")
         }
     </script> -->
-  </body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="hii.css">
+    
+</head>
+<body>
+    <div><button onclick="click_play()">Bắt Đầu Chơi</button></div>
+    <div onclick="click_play()">
+        Bắt Đầu Lại
+    <button>►</button>
+    </div>
+    
+    <table id="show"></table>
+</body>
+<script>
+    var table='';
+var arr=[];
+var turn=0;
+function show(){
+    for(var i=0; i<10; i++){
+        arr[i]=[];
+        for(var j=0; j<10; j++){
+            arr[i][j]='';
+        };
+    };
+
+    for(var i=0; i<10; i++){
+        table+='<tr>';
+        for(var j=0; j<10; j++){
+            table+='<td id="'+i+'_'+j+'" onclick="click_td('+i+','+j+')">'+arr[i][j]+'</td>';
+        };
+        '</tr>';
+    };
+    document.getElementById('show').innerHTML=table;
+}
+
+show();
+
+function click_td(i,j){
+    if(arr[i][j]!='✘'&&arr[i][j]!='🅞'){
+        if(turn==0){
+        document.getElementById(i+'_'+j).innerHTML="✘";
+        document.getElementById(i+'_'+j).style.color="Red";
+        arr[i][j]='✘';
+        turn=1;
+    }else{
+        document.getElementById(i+'_'+j).innerHTML='🅞';
+        document.getElementById(i+'_'+j).style.color="";
+        arr[i][j]='🅞';
+        turn=0;
+    };
+    sosanh(i,j);
+    }
+};
+
+function sosanh(i,j){
+    sosanh_ngang(i,j);
+    sosanh_doc(i,j);
+    sosanh_cheotrai(i,j);
+    sosanh_cheophai(i,j);
+};
+
+function click_play(){
+    return location.reload();
+};
+
+function sosanh_ngang(i,j){
+    if(arr[i][j]==arr[i][j+1]&&arr[i][j]==arr[i][j+2]&&arr[i][j]==arr[i][j+3]&&arr[i][j]==arr[i][j+4]){
+        setTimeout(set,100)
+        function set(){
+            if (this.ship.isDead) this.gameOver();
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i][j-1]&&arr[i][j]==arr[i][j-2]&&arr[i][j]==arr[i][j-3]&&arr[i][j]==arr[i][j-4]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i][j-1]&&arr[i][j]==arr[i][j+1]&&arr[i][j]==arr[i][j+2]&&arr[i][j]==arr[i][j+3]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i][j+1]&&arr[i][j]==arr[i][j-1]&&arr[i][j]==arr[i][j-2]&&arr[i][j]==arr[i][j-3]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i][j+1]&&arr[i][j]==arr[i][j+2]&&arr[i][j]==arr[i][j-1]&&arr[i][j]==arr[i][j-2]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    };
+};
+
+function sosanh_doc(i,j){
+    if(arr[i][j]==arr[i-1][j]&&arr[i][j]==arr[i-2][j]&&arr[i][j]==arr[i-3][j]&&arr[i][j]==arr[i-4][j]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i+1][j]&&arr[i][j]==arr[i+2][j]&&arr[i][j]==arr[i+3][j]&&arr[i][j]==arr[i+4][j]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i-1][j]&&arr[i][j]==arr[i+1][j]&&arr[i][j]==arr[i+2][j]&&arr[i][j]==arr[i+3][j]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i+1][j]&&arr[i][j]==arr[i-1][j]&&arr[i][j]==arr[i-2][j]&&arr[i][j]==arr[i-3][j]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i+1][j]&&arr[i][j]==arr[i+2][j]&&arr[i][j]==arr[i-1][j]&&arr[i][j]==arr[i-2][j]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }
+};
+
+function sosanh_cheotrai(i,j){
+    if(arr[i][j]==arr[i+1][j+1]&&arr[i][j]==arr[i+2][j+2]&&arr[i][j]==arr[i+3][j+3]&&arr[i][j]==arr[i+4][j+4]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i-1][j-1]&&arr[i][j]==arr[i-2][j-2]&&arr[i][j]==arr[i-3][j-3]&&arr[i][j]==arr[i-4][j-4]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i+1][j+1]&&arr[i][j]==arr[i-1][j-1]&&arr[i][j]==arr[i-2][j-2]&&arr[i][j]==arr[i-3][j-3]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i-1][j-1]&&arr[i][j]==arr[i+1][j+1]&&arr[i][j]==arr[i+2][j+2]&&arr[i][j]==arr[i+3][j+3]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i-1][j-1]&&arr[i][j]==arr[i-2][j-2]&&arr[i][j]==arr[i+2][j+2]&&arr[i][j]==arr[i+1][j+1]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    };
+}
+
+function sosanh_cheophai(i,j){
+    if(arr[i][j]==arr[i+1][j-1]&&arr[i][j]==arr[i+2][j-2]&&arr[i][j]==arr[i+3][j-3]&&arr[i][j]==arr[i+4][j-4]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i-1][j+1]&&arr[i][j]==arr[i-2][j+2]&&arr[i][j]==arr[i-3][j+3]&&arr[i][j]==arr[i-4][j+4]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i+1][j-1]&&arr[i][j]==arr[i-1][j+1]&&arr[i][j]==arr[i-2][j+2]&&arr[i][j]==arr[i-3][j+3]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i-1][j+1]&&arr[i][j]==arr[i+1][j-1]&&arr[i][j]==arr[i+2][j-2]&&arr[i][j]==arr[i+3][j-3]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    }else if(arr[i][j]==arr[i-1][j+1]&&arr[i][j]==arr[i-2][j+2]&&arr[i][j]==arr[i+1][j-1]&&arr[i][j]==arr[i+2][j-2]){
+        setTimeout(set,100)
+        function set(){
+           alert( 'Người Chơi ' + ' ' +  arr[i][j]+' Chiến Thắng');
+        };
+    };
+}
+</script>
 </html>
+  <!-- </body>
+</html> -->

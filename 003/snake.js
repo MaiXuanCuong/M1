@@ -7,10 +7,9 @@ const box = 32;
 // load images
 
 const ground = new Image();
-ground.src = "./img/ground.png";
-
+ground.src = "./img/ground1.png"
 const foodImg = new Image();
-foodImg.src = "./img/food.png";
+foodImg.src = "./img/food1.png";
 
 // load audio files
 
@@ -70,7 +69,11 @@ function direction(event){
         down.play();
     }
 }
+function click_play(){
+    return location.reload();}
 
+
+        
 // cheack collision function
 function collision(head,array){
     for(let i = 0; i < array.length; i++){
@@ -88,10 +91,11 @@ function draw(){
     ctx.drawImage(ground,0,0);
     
     for( let i = 0; i < snake.length ; i++){
-        ctx.fillStyle = ( i == 0 )? "green" : "white";
+        ctx.fillStyle = ( i == 0 )? "black" : "red";
+        // "green" "white" "red"
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
         
-        ctx.strokeStyle = "red";
+        ctx.strokeStyle = "black";
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     
@@ -132,19 +136,27 @@ function draw(){
     
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
-        dead.play();
+        dead.play();   
+      
+        
+        alert("GAME OVER: Điểm của bạn là " + score)
     }
     
     snake.unshift(newHead);
     
-    ctx.fillStyle = "white";
-    ctx.font = "45px Changa one";
-    ctx.fillText(score,2*box,1.6*box);
+    ctx.fillStyle = "black";
+    ctx.font = "50px Changa one";
+    ctx.fillText("Điểm: "+score,2*box,1.6*box);
 }
 
+  
+
 // call draw function every 100 ms
-var td = 100
-let game = setInterval(draw,td);
-function choilai() {
+var td = prompt("Nhập tốc độ trò chơi >200:chậm 100<:nhanh 50<:siêu nhanh")
+var game = setInterval(draw,td);
+
+
+
+
    
-}
+

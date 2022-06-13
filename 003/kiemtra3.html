@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="400"
+      style="color: black"
+      border="2px"
+    ></canvas>
+    <script>
+      //   var x = Number(prompt("Nhập x"))
+      //   var y= Number(prompt("Nhập y"))
+      //   var height = Number(prompt("Nhập width"))
+      //   var width = Number(prompt("Nhập width"))
+      function bai4() {
+        class Rectangle {
+          constructor(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.color = color;
+            ctx.fillStyle = "#fa4b2a";
+            ctx.fillRect(x, y, 50, 70);
+          }
+          render() {
+            var c = document.getElementById("myCanvas");
+            var nv2 = c.getContext("2d");
+            nv2.beginPath();
+            nv2.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            nv2.fill();
+
+            nv2.fillStyle = "#fa4b2a";
+            var x = 10;
+            var y = 40;
+            nv2.fillRect(x, y, 50, 70);
+          }
+        }
+        var circle = new Circle(10, 10, 100, "#FF0000");
+        circle.render();
+        Rectangle.render();
+      }
+
+      bai4(this.render);
+    </script>
+  </body>
+</html>
