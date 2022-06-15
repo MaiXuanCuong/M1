@@ -44,13 +44,9 @@ let food = {
 }
 
 // create the score var
-
 let score = 0;
-
 //control the snake
-
 let d;
-
 document.addEventListener("keydown",direction);
 
 function direction(event){
@@ -71,9 +67,6 @@ function direction(event){
 }
 function click_play(){
     return location.reload();}
-
-
-        
 // cheack collision function
 function collision(head,array){
     for(let i = 0; i < array.length; i++){
@@ -83,20 +76,20 @@ function collision(head,array){
     }
     return false;
 }
-
 // draw everything to the canvas
-
 function draw(){
     
     ctx.drawImage(ground,0,0);
     
     for( let i = 0; i < snake.length ; i++){
-        ctx.fillStyle = ( i == 0 )? "black" : "red";
+        ctx.fillStyle = ( i == 0 )? "#00FF00" : "#FF99FF";
         // "green" "white" "red"
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
         
-        ctx.strokeStyle = "black";
+        ctx.strokeStyle = "red";
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
+        // requestAnimationFrame(draw);
+
     }
     
     ctx.drawImage(foodImg, food.x, food.y);
@@ -111,7 +104,7 @@ function draw(){
     if( d == "RIGHT") snakeX += box;
     if( d == "DOWN") snakeY += box;
     
-    // if the snake eats the food
+    // if the snake eats the foodS
     if(snakeX == food.x && snakeY == food.y){
         score++;
         eat.play();
@@ -139,7 +132,15 @@ function draw(){
         dead.play();   
       
         
-        alert("GAME OVER: Điểm của bạn là " + score)
+        // alert("GAME OVER: Điểm của bạn là " + score) 
+        var xacnhan  =  confirm("GAME OVER: Điểm của bạn là " + score + " Bạn muốn chơi lại không?") 
+        if (xacnhan == true) {
+            click_play();
+        }
+        
+            
+    
+        
     }
     
     snake.unshift(newHead);
@@ -154,6 +155,7 @@ function draw(){
 // call draw function every 100 ms
 var td = prompt("Nhập tốc độ trò chơi >200:chậm 100<:nhanh 50<:siêu nhanh")
 var game = setInterval(draw,td);
+// draw();
 
 
 
