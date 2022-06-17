@@ -131,12 +131,12 @@ function draw(){
         clearInterval(game);
         dead.play();   
       
-        
-        // alert("GAME OVER: Điểm của bạn là " + score) 
-        var xacnhan  =  confirm("GAME OVER: Điểm của bạn là " + score + " Bạn muốn chơi lại không?") 
+        setTimeout(function(){  var xacnhan  =  confirm("GAME OVER: Điểm của bạn là " + score + " Bạn muốn chơi lại không?") 
         if (xacnhan == true) {
             click_play();
-        }
+        } },1000);
+        // alert("GAME OVER: Điểm của bạn là " + score) 
+      
         
             
     
@@ -148,13 +148,16 @@ function draw(){
     ctx.fillStyle = "black";
     ctx.font = "50px Changa one";
     ctx.fillText("Điểm: "+score,2*box,1.6*box);
-}
+} 
+var td = prompt("Nhập tốc độ trò chơi >200:chậm 100<:nhanh 50<:siêu nhanh")
+var game = setInterval(draw,td)
 
   
 
 // call draw function every 100 ms
-var td = prompt("Nhập tốc độ trò chơi >200:chậm 100<:nhanh 50<:siêu nhanh")
-var game = setInterval(draw,td);
+ 
+// = prompt("Nhập tốc độ trò chơi >200:chậm 100<:nhanh 50<:siêu nhanh")
+
 // draw();
 
 
